@@ -13,6 +13,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+
+/**
+ * Frontend Site route define...
+ */
+Route::get('/', 'Site\SiteController@index')->name('site.index');
