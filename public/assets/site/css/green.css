@@ -9,6 +9,10 @@
     color: #31b164 !important;
 }
 
+.about-social li a:hover i {
+    color: #000;
+}
+
 .btn-custom,
 .form-kerri .form-control:focus,
 .about-social li a:hover {
