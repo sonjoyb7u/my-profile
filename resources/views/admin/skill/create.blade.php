@@ -64,7 +64,7 @@
                                         <label for="skill_color_code" class="col-sm-3 control-label">Skill Color Code</label>
                                         <div class="col-sm-9">
                                             <select name="skill_color_code" id="skill_color_code" class="form-control">
-                                                <option value="">Select Skill</option>
+                                                <option value="">Select Skill Color Code</option>
                                                 @foreach($color_code as $row)
                                                 <option value="{{ $row }}">{{ $row }}</option>
                                                     @endforeach

@@ -64,6 +64,14 @@
                                     </div>
 
                                     <div class="form-group">
+                                        <label for="icon_name" class="col-sm-3 control-label">Service Icon class Name</label>
+                                        <div class="col-sm-9">
+                                            <input type="text" name="icon_name" class="form-control" id="icon_name" value="{{ $data->icon_name }}" placeholder="Enter Service Icon class Name">
+                                        </div>
+
+                                    </div>
+
+                                    <div class="form-group">
                                         <label for="image" class="col-sm-3 control-label">Choose Image</label>
                                         <div class="col-sm-9">
                                             <input type="file" name="image" id="image" class="form-control">

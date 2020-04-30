@@ -1,6 +1,6 @@
 @extends('admin.components.layout')
 
-@section('title', 'MANAGE SERVICE || MY PROFILE')
+@section('title', 'MANAGE CATEGORY || MY PROFILE')
 
 @section('header')
     @includeIf('admin.components.partials.header')
@@ -19,8 +19,8 @@
             <div class="leftside-content-header">
                 <ul class="breadcrumbs">
                     <li><i class="fa fa-home" aria-hidden="true"></i><a href="{{ route('admin.dashboard') }}">Dashboard</a></li>
-                    <li><a href="{{ route('admin.service.index') }}"><i class="fa fa-list-alt" aria-hidden="true"></i>Service</a></li>
-                    <li><a href="{{ route('admin.service.index') }}"><i class="fa fa-tasks"></i>Manage Service</a></li>
+                    <li><a href="{{ route('admin.category.index') }}"><i class="fa fa-list-alt" aria-hidden="true"></i>Category</a></li>
+                    <li><a href="{{ route('admin.category.index') }}"><i class="fa fa-tasks"></i>Manage Category</a></li>
                 </ul>
             </div>
         </div>
@@ -29,12 +29,12 @@
         <div class="row animated fadeInUp">
             <div class="col-sm-12 col-md-12">
                 @includeIf('show-message.message')
-                <h3 class="section-subtitle"><b>MANAGE SERVICES</b></h3>
+                <h3 class="section-subtitle"><b>MANAGE CATEGORY</b></h3>
                 <div class="panel b-primary bt-md">
                     <div class="panel-content">
                         <div class="row">
                             <div class="col-xs-6">
-                                <h4 style="margin-bottom: 30px;">My Services :</h4>
+                                <h4 style="margin-bottom: 30px;">My Category :</h4>
                             </div>
                         </div>
 
@@ -44,10 +44,8 @@
                                 <thead>
                                 <tr>
                                     <th>Sl No.</th>
-                                    <th>Service Title</th>
-                                    <th>Service Sub-Title</th>
-                                    <th>Service Icon Class Name</th>
-                                    <th>Service Image</th>
+                                    <th>Category Name</th>
+                                    <th>Category Slug</th>
                                     <th>Status</th>
                                     <th>Action</th>
                                 </tr>
@@ -57,27 +55,21 @@
                                     <tr>
                                         <td>{{ $loop->iteration }}</td>
                                         <td>
-                                            {{ $row->title  }}
+                                            {{ $row->name  }}
+                                        </td>
+                                        <td>{{ $row->slug }}</td>
+                                        <td>
+                                            <input type="checkbox" data-toggle="toggle" data-size="mini" data-onstyle="success" data-on="Active" data-off="Inactive" {{ $row->status === 'active' ? 'checked' : '' }} id="categoryStatus" data-id="{{ $row->id }}">
                                         </td>
                                         <td>
-                                            {{ substr($row->sub_title, 0, 40) . ' ... ... ' }}
-                                        </td>
-                                        <td>{{ $row->icon_name }}</td>
-                                        <td>
-                                            <img src="{{ asset('uploads/images/service/'.$row->image) }}" alt="{{ $row->image }}">
-                                        </td>
-                                        <td>
-                                            <input type="checkbox" data-toggle="toggle" data-size="mini" data-onstyle="success" data-on="Active" data-off="Inactive" {{ $row->status === 'active' ? 'checked' : '' }} id="serviceStatus" data-id="{{ $row->id }}">
-                                        </td>
-                                        <td>
-                                            <a class="btn btn-primary btn-sm" href="{{ route('admin.service.show', [base64_encode($row->id)]) }}"><i class="fa fa-eye"></i></a>
-                                            <a class="btn btn-info btn-sm" href="{{ route('admin.service.edit', base64_encode($row->id)) }}"><i class="fa fa-pencil-square-o"></i></a>
+                                            <a class="btn btn-primary btn-sm" href="{{ route('admin.category.show', [base64_encode($row->id)]) }}"><i class="fa fa-eye"></i></a>
+                                            <a class="btn btn-info btn-sm" href="{{ route('admin.category.edit', base64_encode($row->id)) }}"><i class="fa fa-pencil-square-o"></i></a>
                                             <span style="display: inline-block">
-                                                <form action="{{ route('admin.service.delete' , base64_encode($row->id)) }}" method="post">
+                                                <form action="{{ route('admin.category.delete' , base64_encode($row->id)) }}" method="post">
                                                 @csrf
                                                 @method('DELETE')
 
-                                                <button style="margin-top: -10px;" type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Are You Sure Want To Delete Your Profile ?')"><i class="fa fa-trash-o"></i></button>
+                                                <button style="margin-top: -10px;" type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Are You Sure Want To Delete Your Category ?')"><i class="fa fa-trash-o"></i></button>
                                                 </form>
                                             </span>
 

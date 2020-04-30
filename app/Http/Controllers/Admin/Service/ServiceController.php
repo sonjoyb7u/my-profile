@@ -42,6 +42,7 @@ class ServiceController extends Controller
                         $data = [
                             'title' => $request->title,
                             'sub_title' => $request->sub_title,
+                            'icon_name' => $request->icon_name,
                             'image' => $new_image_file ,
                         ];
 //                      return $data;
@@ -64,6 +65,7 @@ class ServiceController extends Controller
                 $data = [
                     'title' => $request->title,
                     'sub_title' => $request->sub_title,
+                    'icon_name' => $request->icon_name,
 
                 ];
 //                return $data;
@@ -114,9 +116,10 @@ class ServiceController extends Controller
                         unlink(public_path('uploads/images/service/'.$skill->image));
 //                    Storage::disk('public')->delete('/images/service/' . $profile->image);
                         $data = [
-                            $skill->title => $request->title,
-                            $skill->sub_title => $request->sub_title,
-                            $skill->image => $new_image_file ,
+                            $skill->title = $request->title,
+                            $skill->sub_title = $request->sub_title,
+                            $skill->icon_name = $request->icon_name,
+                            $skill->image = $new_image_file ,
                         ];
 //                      return $data;
                         $data = $skill->update($data);
@@ -136,8 +139,9 @@ class ServiceController extends Controller
 
             } else {
                 $data = [
-                    'title' => $request->title,
-                    'sub_title' => $request->sub_title,
+                    $skill->title = $request->title,
+                    $skill->sub_title = $request->sub_title,
+                    $skill->icon_name = $request->icon_name,
 
                 ];
 //                return $data;
@@ -156,8 +160,6 @@ class ServiceController extends Controller
             showMessage('danger', 'ERROR, ' . $e->getMessage());
             return redirect()->back();
         }
-
-
 
 
     }

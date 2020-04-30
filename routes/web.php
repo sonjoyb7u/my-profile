@@ -18,16 +18,24 @@ use Illuminate\Support\Facades\Route;
 // });
 
 /**
+ * <<================================================================================>>
+ */
+
+/**
  * FRONTEND SIDE route define...
  */
-Route::group(['namespace' => 'Site', 'name' => 'site.'], function () {
+Route::namespace('Site')->name('site.')->group(function () {
     Route::get('/', 'SiteController@index')->name('index');
+    Route::get('project/{id}', 'SiteController@catWiseProject')->name('project');
+
 });
 
 /**
  * DEFAULT AUTHENTICATE route define...
  */
+
 //Auth::routes();
+
 
 /**
  * CUSTOM AUTHENTICATE route define...
@@ -88,6 +96,45 @@ Route::prefix('admin')->namespace('Admin')->name('admin.')->group(function () {
         Route::put('update/{id}', 'ServiceController@update')->name('update');
         Route::delete('delete/{id}', 'ServiceController@destroy')->name('delete');
         Route::get('status/{id}/{status}','ServiceController@updateStatus')->name('status');
+
+    });
+
+    //    CATEGORY SECTION route...
+    Route::prefix('category')->namespace('Category')->name('category.')->group(function () {
+        Route::get('/', 'CategoryController@index')->name('index');
+        Route::get('show/{id}', 'CategoryController@show')->name('show');
+        Route::post('store', 'CategoryController@store')->name('store');
+        Route::get('create', 'CategoryController@create')->name('create');
+        Route::get('edit/{id}', 'CategoryController@edit')->name('edit');
+        Route::put('update/{id}', 'CategoryController@update')->name('update');
+        Route::delete('delete/{id}', 'CategoryController@destroy')->name('delete');
+        Route::get('status/{id}/{status}','CategoryController@updateStatus')->name('status');
+
+    });
+
+    //    PROJECT SECTION route...
+    Route::prefix('project')->namespace('Project')->name('project.')->group(function () {
+        Route::get('/', 'ProjectController@index')->name('index');
+        Route::get('show/{id}', 'ProjectController@show')->name('show');
+        Route::post('store', 'ProjectController@store')->name('store');
+        Route::get('create', 'ProjectController@create')->name('create');
+        Route::get('edit/{id}', 'ProjectController@edit')->name('edit');
+        Route::put('update/{id}', 'ProjectController@update')->name('update');
+        Route::delete('delete/{id}', 'ProjectController@destroy')->name('delete');
+        Route::get('status/{id}/{status}','ProjectController@updateStatus')->name('status');
+
+    });
+
+    //    SLIDER SECTION route...
+    Route::prefix('slider')->namespace('Slider')->name('slider.')->group(function () {
+        Route::get('/', 'ProjectController@index')->name('index');
+        Route::get('show/{id}', 'ProjectController@show')->name('show');
+        Route::post('store', 'ProjectController@store')->name('store');
+        Route::get('create', 'ProjectController@create')->name('create');
+        Route::get('edit/{id}', 'ProjectController@edit')->name('edit');
+        Route::put('update/{id}', 'ProjectController@update')->name('update');
+        Route::delete('delete/{id}', 'ProjectController@destroy')->name('delete');
+        Route::get('status/{id}/{status}','ProjectController@updateStatus')->name('status');
 
     });
 

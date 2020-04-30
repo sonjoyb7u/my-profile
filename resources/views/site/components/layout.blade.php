@@ -121,8 +121,11 @@
 <script src="{{ asset('assets/site/vendors/animate-scroll/js/aos.js') }}"></script>
 <!-- ANIMATED-CIRCLE JS -->
 <script src="{{ asset('assets/site/vendors/animated-circle/js/animated-circle.js') }}"></script>
+<!--MAIN JS-->
+<script src="{{ asset('assets/site/js/main.js') }}"></script>
 <!--CUSTOM JS-->
 <script src="{{ asset('assets/site/js/custom.js') }}"></script>
+
 <script>
     $(".simple-text-rotate").textrotator({
         animation: "fade",

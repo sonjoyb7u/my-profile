@@ -49,7 +49,27 @@
                             <li  class="{{ request()->is('admin/slider', 'admin/slider/edit/*', 'admin/slider/show/*') ? 'active-item' : '' }}"><a href="">Manage Slider</a></li>
                         </ul>
                     </li>
+                    <!-- WORK SECTION -->
+                    <li class="has-child-item {{ request()->is('admin/category','admin/category/*', 'admin/project', 'admin/project/*') ? 'open-item active-item' : 'close-item' }}">
+                        <a><i class="fa fa-sitemap" aria-hidden="true"></i><span>WORK SECTION</span></a>
+                        <ul class="nav child-nav level-1">
+                            <li class="has-child-item {{ request()->is('admin/category', 'admin/category/*') ? 'open-item active-item' : 'close-item' }}">
+                                <a><i class="fa fa-cubes"  aria-hidden="true"></i>CATEGORY</a>
+                                <ul class="nav child-nav level-2">
+                                    <li class="{{ request()->is('admin/category/create') ? 'active-item' : 'close-item' }}"><a href="{{ route('admin.category.create') }}">Add Category</a></li>
+                                    <li class="{{ request()->is('admin/category', 'admin/category/edit/*', 'admin/category/show/*') ? 'active-item' : 'close-item' }}"><a href="{{ route('admin.category.index') }}">Manage Category</a></li>
+                                </ul>
+                            </li>
+                            <li class="has-child-item {{ request()->is('admin/project', 'admin/project/*') ? 'open-item active-item' : 'close-item' }}">
+                                <a><i class="fa fa-cubes"  aria-hidden="true"></i>PROJECT</a>
+                                <ul class="nav child-nav level-2">
+                                    <li class="{{ request()->is('admin/project/create') ? 'active-item' : 'close-item' }}"><a href="{{ route('admin.project.create') }}">Add Project</a></li>
+                                    <li class="{{ request()->is('admin/project', 'admin/project/edit/*', 'admin/project/show/*') ? 'active-item' : 'close-item' }}"><a href="{{ route('admin.project.index') }}">Manage Project</a></li>
+                                </ul>
+                            </li>
 
+                        </ul>
+                    </li>
                 </ul>
             </nav>
         </div>

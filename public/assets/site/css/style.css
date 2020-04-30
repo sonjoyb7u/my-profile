@@ -460,30 +460,27 @@ button:focus {
 .skill-section .box {
     margin-top: 1rem;
 }
-
 svg.radial-progress circle {
     stroke-width: 6;
 }
-
 svg.radial-progress text {
     fill: #3c4761;
     font-size: 1.2rem;
 }
-
 svg.color_code_1 circle {
     stroke: #30bae7;
 }
-
 svg.color_code_2 circle {
     stroke: #d74680;
 }
-
 svg.color_code_3 circle {
     stroke: #15c7a8;
 }
-
 svg.color_code_4 circle {
     stroke: #f27d47;
+}
+svg.color_code_5 circle {
+    stroke: #7b0af2;
 }
 
 

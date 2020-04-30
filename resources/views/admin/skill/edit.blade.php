@@ -41,35 +41,40 @@
                         </div>
 
                         <div class="row">
-                            <div class="col-md-10 col-md-offset-1">
+                            <div class="col-md-12">
                                 <form class="form-horizontal" action="{{ route('admin.skill.update', [base64_encode($data->id)]) }}" method="POST">
                                     @csrf
                                     @method('PUT')
 
                                     <div class="form-group">
-                                        <label for="skill_name" class="col-sm-3 control-label">Skill Name</label>
-                                        <div class="col-sm-9">
+                                        <label for="skill_name" class="col-sm-4 control-label">Skill Name</label>
+                                        <div class="col-sm-8">
                                             <input type="text" name="skill_name" class="form-control" id="skill_name" value="{{ $data->skill_name }}">
                                         </div>
 
                                     </div>
 
                                     <div class="form-group">
-                                        <label for="skill_percent" class="col-sm-3 control-label">Skill Percentage</label>
-                                        <div class="col-sm-9">
+                                        <label for="skill_percent" class="col-sm-4 control-label">Skill Percentage</label>
+                                        <div class="col-sm-8">
                                             <input type="text" name="skill_percent" class="form-control" id="skill_percent" value="{{ $data->skill_percent }}">
                                         </div>
                                     </div>
 
                                     <div class="form-group">
-                                        <label for="skill_color_code" class="col-sm-3 control-label">Skill Color Code</label>
-                                        <div class="col-sm-9">
-                                            <input type="text" name="skill_color_code" class="form-control" id="skill_color_code" value="{{ $data->skill_color_code }}">
+                                        <label for="skill_color_code" class="col-sm-4 control-label">Choose Color Code</label>
+                                        <div class="col-sm-8">
+                                            <select name="skill_color_code" id="skill_color_code" class="form-control">
+                                                <option value="">Select Color Code</option>
+                                                @foreach($color_code as $row)
+                                                    <option value="{{ $row }}" {{ $row === $data->skill_color_code ? 'selected' : '' }}>{{ $row }}</option>
+                                                @endforeach
+                                            </select>
                                         </div>
                                     </div>
 
                                     <div class="form-group">
-                                        <div class="col-sm-offset-3 col-sm-9">
+                                        <div class="col-sm-offset-4 col-sm-8">
                                             <button type="submit" class="btn btn-primary">Update Skill</button>
                                         </div>
                                     </div>

@@ -19,7 +19,7 @@ class SkillController extends Controller
 
     public function create() {
         $color_code = [
-            'color_code_1', 'color_code_2', 'color_code_3', 'color_code_4', 'color_code_5', 'color_code_6', 'color_code_7', 'color_code_8', 'color_code_9'
+            'color_code_1', 'color_code_2', 'color_code_3', 'color_code_4', 'color_code_5', 'color_code_6', 'color_code_7', 'color_code_8', 'color_code_9', 'color_code_10',
         ];
 
         return view('admin.skill.create', compact('color_code'));
@@ -57,7 +57,11 @@ class SkillController extends Controller
         $data = Skill::find($id);
 //        return $data;
 
-        return view('admin.skill.edit', compact('data'));
+        $color_code = [
+            'color_code_1', 'color_code_2', 'color_code_3', 'color_code_4', 'color_code_5', 'color_code_6', 'color_code_7', 'color_code_8', 'color_code_9', 'color_code_10',
+        ];
+
+        return view('admin.skill.edit', compact('data', 'color_code'));
     }
 
     public function update(SkillRequest $request, $id) {

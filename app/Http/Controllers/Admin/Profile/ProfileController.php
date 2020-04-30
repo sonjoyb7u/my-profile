@@ -59,7 +59,7 @@ class ProfileController extends Controller
 //            return $new_image_file;
             $image_file_type = $image_file->getMimeType();
             if($image_file->isValid()) {
-                if ($image_file_type == "image/jpeg" || $image_file_type == "image/png") {
+                if ($image_file_type === "image/jpeg" || $image_file_type === "image/png") {
 
                     unlink(public_path('uploads/images/profile/'.$profile->image));
 //                    Storage::disk('public')->delete('/images/profile/' . $profile->image);
