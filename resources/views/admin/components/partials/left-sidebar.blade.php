@@ -25,6 +25,14 @@
                             <li  class=" {{ request()->is('admin/profile', 'admin/profile/edit/*', 'admin/profile/show/*') ? 'active-item' : '' }}"><a href="{{ route('admin.profile.index') }}">Manage Profile</a></li>
                         </ul>
                     </li>
+                    <!-- SLIDER SECTION -->
+                    <li class="has-child-item {{ request()->is('admin/slider','admin/sliders/*') ? 'open-item active-item' : 'close-item' }}">
+                        <a><i class="fa fa-cube" aria-hidden="true"></i><span>SLIDER SECTION</span></a>
+                        <ul class="nav child-nav level-1">
+                            <li class="{{ request()->is('admin/slider/create') ? 'active-item' : '' }}"><a href="{{ route('admin.slider.create') }}">Add Slider</a></li>
+                            <li  class="{{ request()->is('admin/slider', 'admin/slider/edit/*', 'admin/slider/show/*') ? 'active-item' : '' }}"><a href="{{ route('admin.slider.index') }}">Manage Slider</a></li>
+                        </ul>
+                    </li>
                     <!-- SKILL SECTION -->
                     <li class="has-child-item {{ request()->is('admin/skill', 'admin/skill/*') ? 'open-item active-item' : 'close-item' }}">
                         <a><i class="fa fa-cube" aria-hidden="true"></i><span>SKILL SECTION</span></a>
@@ -39,14 +47,6 @@
                         <ul class="nav child-nav level-1">
                             <li class=" {{ request()->is('admin/service/create') ? 'active-item' : '' }}"><a href="{{ route('admin.service.create') }}">Add Service</a></li>
                             <li  class=" {{ request()->is('admin/service', 'admin/service/edit/*', 'admin/service/show/*') ? 'active-item' : '' }}"><a href="{{ route('admin.service.index') }}">Manage Skill</a></li>
-                        </ul>
-                    </li>
-                    <!-- SLIDER SECTION -->
-                    <li class="has-child-item {{ request()->is('admin/slider','admin/sliders/*') ? 'open-item active-item' : 'close-item' }}">
-                        <a><i class="fa fa-cube" aria-hidden="true"></i><span>SLIDER SECTION</span></a>
-                        <ul class="nav child-nav level-1">
-                            <li class="{{ request()->is('admin/slider/create') ? 'active-item' : '' }}"><a href="">Add Slider</a></li>
-                            <li  class="{{ request()->is('admin/slider', 'admin/slider/edit/*', 'admin/slider/show/*') ? 'active-item' : '' }}"><a href="">Manage Slider</a></li>
                         </ul>
                     </li>
                     <!-- WORK SECTION -->
@@ -65,6 +65,27 @@
                                 <ul class="nav child-nav level-2">
                                     <li class="{{ request()->is('admin/project/create') ? 'active-item' : 'close-item' }}"><a href="{{ route('admin.project.create') }}">Add Project</a></li>
                                     <li class="{{ request()->is('admin/project', 'admin/project/edit/*', 'admin/project/show/*') ? 'active-item' : 'close-item' }}"><a href="{{ route('admin.project.index') }}">Manage Project</a></li>
+                                </ul>
+                            </li>
+
+                        </ul>
+                    </li>
+                    <!-- BLOG SECTION -->
+                    <li class="has-child-item {{ request()->is('admin/blog-category','admin/blog-category/*', 'admin/blog-post', 'admin/blog-post/*') ? 'open-item active-item' : 'close-item' }}">
+                        <a><i class="fa fa-sitemap" aria-hidden="true"></i><span>BLOG SECTION</span></a>
+                        <ul class="nav child-nav level-1">
+                            <li class="has-child-item {{ request()->is('admin/blog-category', 'admin/blog-category/*') ? 'open-item active-item' : 'close-item' }}">
+                                <a><i class="fa fa-cubes"  aria-hidden="true"></i>BLOG-CATEGORY</a>
+                                <ul class="nav child-nav level-2">
+                                    <li class="{{ request()->is('admin/blog-category/create') ? 'active-item' : 'close-item' }}"><a href="{{ route('admin.blog-category.create') }}">Add Blog-Category</a></li>
+                                    <li class="{{ request()->is('admin/blog-category', 'admin/blog-category/edit/*', 'admin/blog-category/show/*') ? 'active-item' : 'close-item' }}"><a href="{{ route('admin.blog-category.index') }}">Manage Blog-Category</a></li>
+                                </ul>
+                            </li>
+                            <li class="has-child-item {{ request()->is('admin/blog-post', 'admin/blog-post/*') ? 'open-item active-item' : 'close-item' }}">
+                                <a><i class="fa fa-cubes"  aria-hidden="true"></i>BLOG-POST</a>
+                                <ul class="nav child-nav level-2">
+                                    <li class="{{ request()->is('admin/blog-post/create') ? 'active-item' : 'close-item' }}"><a href="{{ route('admin.blog-post.create') }}">Add Blog-post</a></li>
+                                    <li class="{{ request()->is('admin/blog-post', 'admin/blog-post/edit/*', 'admin/blog-post/show/*') ? 'active-item' : 'close-item' }}"><a href="{{ route('admin.blog-post.index') }}">Manage Blog-Post</a></li>
                                 </ul>
                             </li>
 

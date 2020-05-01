@@ -24,11 +24,11 @@
         <div class="header-section" id="user-headerbox">
             <div class="user-header-wrap">
                 <div class="user-photo">
-                    <img alt="profile photo" src="{{ asset('uploads/images/profile/'.auth()->user()->profile->image) }}" />
+                    <img alt="profile photo" src="{{ asset('uploads/images/profile/' . auth()->user()->profile->image) }}" />
                 </div>
                 <div class="user-info">
                     <span class="user-name">{{ auth()->user()->full_name }}</span>
-                    <span class="user-profile">{{ auth()->user()->status == 1 ? 'ADMIN' : '' }}</span>
+                    <span class="user-profile">{{ auth()->user()->status === 1 ? 'ADMIN' : '' }}</span>
                 </div>
                 <i class="fa fa-plus icon-open" aria-hidden="true"></i>
                 <i class="fa fa-minus icon-close" aria-hidden="true"></i>

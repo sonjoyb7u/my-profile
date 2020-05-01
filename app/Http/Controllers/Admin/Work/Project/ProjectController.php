@@ -76,7 +76,7 @@ class ProjectController extends Controller
     public function edit($id) {
         $id = base64_decode($id);
 
-        $categories = CategoryAlias::with('projects')->where('status', CategoryAlias::ACTIVE_STATUS)->get();
+        $categories = Category::with('projects')->where('status', Category::ACTIVE_STATUS)->get();
 
         $data = Project::with('user', 'category')->find($id);
 //        return $data;
@@ -101,7 +101,7 @@ class ProjectController extends Controller
             if($image_file->isValid()) {
                 if ($image_file_type === "image/jpeg" || $image_file_type === "image/png") {
 
-//                    unlink(public_path('uploads/images/project/'.$project->image));
+                    unlink(public_path('uploads/images/project/'.$project->image));
 //                    Storage::disk('public')->delete('/images/project/' . $project->image);
 
                     $name = $request->name;
@@ -160,6 +160,8 @@ class ProjectController extends Controller
         $id = base64_decode($id);
 //        return $id;
         $data = Project::find($id);
+        Storage::disk('public')->delete('/images/slider/'.$data->image);
+
         $delete_data = $data->delete();
         if($delete_data) {
             showMessage('success', 'Project Has Been Deleted Successfully Done.');

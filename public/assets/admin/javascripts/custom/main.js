@@ -134,6 +134,59 @@ $('body').on('change', '#sliderStatus', function () {
 });
 
 
+// UPDATE BLOG-CATEGORY STATUS using js
+$('body').on('change', '#blogCategoryStatus', function () {
+    var id = $(this).attr('data-id');
+
+    if (this.checked) {
+        var status = 'active';
+    } else {
+        var status = 'inactive';
+    }
+
+    // alert(id + status);
+
+    $('.loader-overlay').show();
+
+    $.ajax({
+        url: "blog-category/status/" + id + '/' + status,
+        method: 'get',
+        success: function (result) {
+            // console.log(result);
+            $('.loader-overlay').hide();
+        }
+
+    });
+
+});
+
+// UPDATE BLOG-POST STATUS using js
+$('body').on('change', '#blogPostStatus', function () {
+    var id = $(this).attr('data-id');
+
+    if (this.checked) {
+        var status = 'published';
+    } else {
+        var status = 'draft';
+    }
+
+    // alert(id + status);
+
+    $('.loader-overlay').show();
+
+    $.ajax({
+        url: "blog-post/status/" + id + '/' + status,
+        method: 'get',
+        success: function (result) {
+            // console.log(result);
+            $('.loader-overlay').hide();
+        }
+
+    });
+
+});
+
+
 // DATETIME-PICKER START/END using js...
 $('body').on('click', '#datetimepicker', function () {
     // window.alert("hello!");
@@ -149,12 +202,12 @@ $('body').on('click', '#datetimepicker', function () {
 //SLIDER-IMAGE POPUP using jQuery...
 $('img').click(function () {
     // alert('Slider Image');
-
     var slider_image_src = $(this).attr('src');
     // alert(slider_image_src);
 
     $('.modal').modal('show');
     $('#slider-popup').attr('src', slider_image_src);
+
 });
 
 

@@ -17,5 +17,8 @@ class DatabaseSeeder extends Seeder
 //         $this->call(ServicesTableSeeder::class);
 //         $this->call(CategoriesTableSeeder::class);
 //         $this->call(ProjectsTableSeeder::class);
+//         $this->call(SlidersTableSeeder::class);
+//         $this->call(BlogCategoriesTableSeeder::class);
+//         $this->call(PostsTableSeeder::class);
     }
 }
