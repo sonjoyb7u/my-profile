@@ -49,6 +49,14 @@
                             <li  class=" {{ request()->is('admin/service', 'admin/service/edit/*', 'admin/service/show/*') ? 'active-item' : '' }}"><a href="{{ route('admin.service.index') }}">Manage Skill</a></li>
                         </ul>
                     </li>
+                    <!-- CLIENT SECTION -->
+                    <li class="has-child-item {{ request()->is('admin/client', 'admin/client/*') ? 'open-item active-item' : 'close-item' }}">
+                        <a><i class="fa fa-cube" aria-hidden="true"></i><span>CLIENT SECTION</span></a>
+                        <ul class="nav child-nav level-1">
+                            <li class=" {{ request()->is('admin/client/create') ? 'active-item' : '' }}"><a href="{{ route('admin.client.create') }}">Add Client</a></li>
+                            <li  class=" {{ request()->is('admin/client', 'admin/client/edit/*', 'admin/client/show/*') ? 'active-item' : '' }}"><a href="{{ route('admin.client.index') }}">Manage Client</a></li>
+                        </ul>
+                    </li>
                     <!-- WORK SECTION -->
                     <li class="has-child-item {{ request()->is('admin/category','admin/category/*', 'admin/project', 'admin/project/*') ? 'open-item active-item' : 'close-item' }}">
                         <a><i class="fa fa-sitemap" aria-hidden="true"></i><span>WORK SECTION</span></a>

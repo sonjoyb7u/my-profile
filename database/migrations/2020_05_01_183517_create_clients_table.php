@@ -15,7 +15,12 @@ class CreateClientsTable extends Migration
     {
         Schema::create('clients', function (Blueprint $table) {
             $table->id();
+            $table->string('name', 50);
+            $table->text('comment');
+            $table->string('image', 100)->default('client_default.png');
+            $table->enum('status', ['active', 'inactive'])->default('active');
             $table->timestamps();
+
         });
     }
 

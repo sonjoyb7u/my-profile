@@ -699,6 +699,19 @@ svg.color_code_5 circle {
     transform: scale(1.05);
 }
 
+/*=========================
+        9.CONTACT
+===========================*/
+
+.img_blog img {
+    width: 330px !important;
+    margin: 0 auto;
+    height: 280px;
+}
+.blog-post-nav {
+    margin-top: 60px;
+}
+
 
 /*=========================
         9.CONTACT

@@ -28,7 +28,7 @@ class PostRequest extends FormRequest
                 'cat_name' => 'required',
                 'title' => 'required|max:50',
                 'desc' => 'required',
-                'image' => 'image',
+                'image' => 'image|file',
             ];
 
         } elseif($this->method() === 'PATCH') {
@@ -36,7 +36,7 @@ class PostRequest extends FormRequest
                 'cat_name' => 'required',
                 'title' => 'required|max:50',
                 'desc' => 'required',
-                'image' => 'image',
+                'image' => 'image|file',
             ];
 
         } else {
@@ -44,7 +44,7 @@ class PostRequest extends FormRequest
                 'cat_name' => 'required',
                 'title' => 'required|unique:posts|max:50',
                 'desc' => 'required',
-                'image' => 'required|image',
+                'image' => 'required|image|file',
             ];
         }
 

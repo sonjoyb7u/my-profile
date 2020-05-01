@@ -52,6 +52,32 @@ $('body').on('change', '#serviceStatus', function () {
 
 });
 
+// UPDATE CLIENT STATUS using js...
+$('body').on('change', '#clientStatus', function () {
+    var id = $(this).attr('data-id');
+
+    if (this.checked) {
+        var status = 'active';
+    } else {
+        var status = 'inactive';
+    }
+
+    // alert(id + status);
+
+    $('.loader-overlay').show();
+
+    $.ajax({
+        url: "client/status/" + id + '/' + status,
+        method: 'get',
+        success: function (result) {
+            // console.log(result);
+            $('.loader-overlay').hide();
+        }
+
+    });
+
+});
+
 
 // UPDATE CATEGORY STATUS using js
 $('body').on('change', '#categoryStatus', function () {
