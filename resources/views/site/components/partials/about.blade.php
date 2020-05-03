@@ -16,10 +16,10 @@
                     <p class="text-muted mt-2">{{ substr($row->profile->bio, 400, 596) }}</p>
                     <div>
                         <ul class="mb-0 about-social list-inline mt-4">
-                            <li class="list-inline-item"><a target="_blank" href="http://www.github.com/sonjoyb7u"><i class="mdi mdi-github"></i></a></li>
-                            <li class="list-inline-item"><a target="_blank" href="#"><i class="mdi mdi-facebook"></i></a></li>
-                            <li class="list-inline-item"><a target="_blank" href="http://linkedin.com/in/sonjoy-barua-431b7ab2"><i class="mdi mdi-linkedin"></i></a></li>
-                            <li class="list-inline-item"><a target="_blank" href="http://www.twitter.com/sonjoy_john"><i class="mdi mdi-twitter"></i></a></li>
+                            <li class="list-inline-item"><a target="_blank" href="https://www.github.com/sonjoyb7u"><i class="mdi mdi-github"></i></a></li>
+                            <li class="list-inline-item"><a target="_blank" href="https://www.facebook.com/sonjoy.john"><i class="mdi mdi-facebook"></i></a></li>
+                            <li class="list-inline-item"><a target="_blank" href="www.linkedin.com/in/sonjoyb7u"><i class="mdi mdi-linkedin"></i></a></li>
+                            <li class="list-inline-item"><a target="_blank" href="https://www.twitter.com/sonjoy_john"><i class="mdi mdi-twitter"></i></a></li>
                         </ul>
                     </div>
                 </div>

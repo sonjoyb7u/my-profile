@@ -4,10 +4,10 @@
             <div class="col-md-12">
                 <div class="text-center text-white footer-alt">
                     <ul class="list-unstyled list-inline mb-3">
-                        <li class="list-inline-item"><a href="#"><i class="mdi mdi-facebook text-muted"></i></a></li>
-                        <li class="list-inline-item"><a href="#"><i class="mdi mdi-linkedin text-muted"></i></a></li>
-                        <li class="list-inline-item"><a href="#"><i class="mdi mdi-pinterest text-muted"></i></a></li>
-                        <li class="list-inline-item"><a href="#"><i class="mdi mdi-twitter text-muted"></i></a></li>
+                        <li class="list-inline-item"><a target="_blank" href="https://www.facebook.com/sonjoy.john"><i class="mdi mdi-facebook text-muted"></i></a></li>
+                        <li class="list-inline-item"><a target="_blank" href="www.linkedin.com/in/sonjoyb7u"><i class="mdi mdi-linkedin text-muted"></i></a></li>
+                        <li class="list-inline-item"><a target="_blank" href="https://www.github.com/sonjoyb7u"><i class="mdi mdi-github text-muted"></i></a></li>
+                        <li class="list-inline-item"><a target="_blank" href="https://www.twitter.com/sonjoy_john"><i class="mdi mdi-twitter text-muted"></i></a></li>
                     </ul>
                     <p class="text-muted mb-0"> 2019 - 2020 &copy; WebApp-Dev. Design by Sonjoy Barua.</p>
                 </div>
