@@ -168,6 +168,9 @@ class ServiceController extends Controller
         $id = base64_decode($id);
 //        return $id;
         $data = Service::find($id);
+        unlink(public_path('uploads/images/service/'.$data->image));
+//        Storage::disk('public')->delete('/images/service/'.$data->image);
+
         $delete_data = $data->delete();
         if($delete_data) {
             showMessage('success', 'Service Has Been Deleted Successfully Done.');

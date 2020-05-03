@@ -33,6 +33,14 @@
                             <li  class="{{ request()->is('admin/slider', 'admin/slider/edit/*', 'admin/slider/show/*') ? 'active-item' : '' }}"><a href="{{ route('admin.slider.index') }}">Manage Slider</a></li>
                         </ul>
                     </li>
+                    <!-- URL LINK SECTION -->
+                    <li class="has-child-item {{ request()->is('admin/url-link', 'admin/url-link/*') ? 'open-item active-item' : 'close-item' }}">
+                        <a><i class="fa fa-cube" aria-hidden="true"></i><span>URL-LINK SECTION</span></a>
+                        <ul class="nav child-nav level-1">
+                            <li class=" {{ request()->is('admin/url-link/create') ? 'active-item' : '' }}"><a href="{{ route('admin.url-link.create') }}">Add Url-link</a></li>
+                            <li  class=" {{ request()->is('admin/url-link', 'admin/url-link/edit/*', 'admin/url-link/show/*') ? 'active-item' : '' }}"><a href="{{ route('admin.url-link.index') }}">Manage Url-links</a></li>
+                        </ul>
+                    </li>
                     <!-- SKILL SECTION -->
                     <li class="has-child-item {{ request()->is('admin/skill', 'admin/skill/*') ? 'open-item active-item' : 'close-item' }}">
                         <a><i class="fa fa-cube" aria-hidden="true"></i><span>SKILL SECTION</span></a>

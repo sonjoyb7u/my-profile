@@ -4,13 +4,11 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Service extends Model
+class Url extends Model
 {
     protected $fillable = [
-        'title', 'sub_title', 'icon_name', 'image', 'status',
+        'name', 'url_link', 'status',
     ];
 
     public const ACTIVE_STATUS = 'active';
-    public const INACTIVE_STATUS = 'inactive';
-
 }

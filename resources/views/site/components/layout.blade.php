@@ -77,7 +77,8 @@
 
 <!--START WORK -->
 {{----}}
-@yield('work')
+@yield('project')
+@yield('cat-wise-project')
 <!--END WORK -->
 
 <!-- START BLOG -->

@@ -2,7 +2,7 @@
 <nav class="navbar navbar-expand-lg fixed-top custom-nav sticky">
     <div class="container">
 
-        <a class="navbar-brand pt-0 logo" href="#">
+        <a class="navbar-brand pt-0 logo" href="{{ route('site.index') }}">
             <img src="{{ asset('assets/site/images/logo/logo2.png') }}" alt="" class="img-fluid logo-light">
             <img src="{{ asset('assets/site/images/logo/logo2.png') }}" alt="" class="img-fluid logo-dark">
         </a>
@@ -20,22 +20,22 @@
                     <a class="nav-link" href="#about">About</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#services">Services</a>
+                    <a class="nav-link" href="#services">Service's</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#client">Client</a>
+                    <a class="nav-link" href="#client">Client's</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#work">Portfolio</a>
+                    <a class="nav-link" href="#project">Project's</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#blog">Blog</a>
+                    <a class="nav-link" href="#blog">Blog's</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#contact">Contact</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#hire">Hire Me</a>
+                    <a class="nav-link" href="#contact">Hire Me</a>
                 </li>
             </ul>
         </div>

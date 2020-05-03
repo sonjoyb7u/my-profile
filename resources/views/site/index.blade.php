@@ -26,8 +26,8 @@
     @includeIf('site.components.partials.client')
 @endsection
 
-@section('work')
-    @includeIf('site.components.partials.work')
+@section('project')
+    @includeIf('site.components.partials.project')
 @endsection
 
 @section('blog')

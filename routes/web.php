@@ -26,7 +26,7 @@ use Illuminate\Support\Facades\Route;
  */
 Route::namespace('Site')->name('site.')->group(function () {
     Route::get('/', 'SiteController@index')->name('index');
-    Route::get('project/{id}', 'SiteController@catWiseProject')->name('project');
+    Route::get('category/{slug}', 'SiteController@showCategory')->name('project');
 
 });
 
@@ -70,6 +70,32 @@ Route::prefix('admin')->namespace('Admin')->name('admin.')->group(function () {
         Route::get('edit/{id}', 'ProfileController@edit')->name('edit');
         Route::put('update/{id}', 'ProfileController@update')->name('update');
         Route::delete('delete/{id}', 'ProfileController@destroy')->name('delete');
+
+    });
+
+    //    SLIDER SECTION route...
+    Route::prefix('slider')->namespace('Slider')->name('slider.')->group(function () {
+        Route::get('/', 'SliderController@index')->name('index');
+        Route::get('show/{id}', 'SliderController@show')->name('show');
+        Route::post('store', 'SliderController@store')->name('store');
+        Route::get('create', 'SliderController@create')->name('create');
+        Route::get('edit/{id}', 'SliderController@edit')->name('edit');
+        Route::put('update/{id}', 'SliderController@update')->name('update');
+        Route::delete('delete/{id}', 'SliderController@destroy')->name('delete');
+        Route::get('status/{id}/{status}','SliderController@updateStatus')->name('status');
+
+    });
+
+    //    URL LINK SECTION route...
+    Route::prefix('url-link')->namespace('Url')->name('url-link.')->group(function () {
+        Route::get('/', 'UrlController@index')->name('index');
+        Route::get('show/{id}', 'UrlController@show')->name('show');
+        Route::post('store', 'UrlController@store')->name('store');
+        Route::get('create', 'UrlController@create')->name('create');
+        Route::get('edit/{id}', 'UrlController@edit')->name('edit');
+        Route::put('update/{id}', 'UrlController@update')->name('update');
+        Route::delete('delete/{id}', 'UrlController@destroy')->name('delete');
+        Route::get('status/{id}/{status}','UrlController@updateStatus')->name('status');
 
     });
 
@@ -122,19 +148,6 @@ Route::prefix('admin')->namespace('Admin')->name('admin.')->group(function () {
         Route::put('update/{id}', 'ProjectController@update')->name('update');
         Route::delete('delete/{id}', 'ProjectController@destroy')->name('delete');
         Route::get('status/{id}/{status}','ProjectController@updateStatus')->name('status');
-
-    });
-
-    //    SLIDER SECTION route...
-    Route::prefix('slider')->namespace('Slider')->name('slider.')->group(function () {
-        Route::get('/', 'SliderController@index')->name('index');
-        Route::get('show/{id}', 'SliderController@show')->name('show');
-        Route::post('store', 'SliderController@store')->name('store');
-        Route::get('create', 'SliderController@create')->name('create');
-        Route::get('edit/{id}', 'SliderController@edit')->name('edit');
-        Route::put('update/{id}', 'SliderController@update')->name('update');
-        Route::delete('delete/{id}', 'SliderController@destroy')->name('delete');
-        Route::get('status/{id}/{status}','SliderController@updateStatus')->name('status');
 
     });
 

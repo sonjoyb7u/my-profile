@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use App\Models\Url;
 
 class Slider extends Model
 {
@@ -12,4 +13,8 @@ class Slider extends Model
 
     public const ACTIVE_STATUS = 'active';
     public const INACTIVE_STATUS = 'inactive';
+
+    public function url() {
+        return $this->hasOne(Url::class);
+    }
 }

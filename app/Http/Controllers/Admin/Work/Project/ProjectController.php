@@ -160,7 +160,9 @@ class ProjectController extends Controller
         $id = base64_decode($id);
 //        return $id;
         $data = Project::find($id);
-        Storage::disk('public')->delete('/images/slider/'.$data->image);
+
+        unlink(public_path('uploads/images/project/'.$data->image));
+//        Storage::disk('public')->delete('/images/project/'.$data->image);
 
         $delete_data = $data->delete();
         if($delete_data) {

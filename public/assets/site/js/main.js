@@ -1,19 +1,17 @@
-// UPDATE CATEGORY STATUS using js
+// LOAD CATEGORY WISE PROJECT CONTENT using js...
 $(document).ready(function () {
-
-    $("a[name='category']").on('click', '#catProject', function(){
-        // alert('Hello');
-        var cat_id =$(this).attr("data-id");
-        alert('cat_id');
-        // console.log(cat_id);
+    $("#cat-wise-post").on("click", function(e) {
+        e.preventDefault();
+        // alert($(this).text());
+        var cat_slug = $(this).attr("data-id");
+        alert(cat_slug);
 
         $.ajax({
-           url: "project/" + cat_id,
-           method: 'get',
-            success: function (result) {
-               // console.log(result);
+            type:"get",
+            url:"category/" + cat_slug,
+            success : function(results) {
+                console.log(results);
             }
-
         });
 
     });
