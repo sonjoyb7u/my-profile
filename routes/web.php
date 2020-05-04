@@ -26,7 +26,6 @@ use Illuminate\Support\Facades\Route;
  */
 Route::namespace('Site')->name('site.')->group(function () {
     Route::get('/', 'SiteController@index')->name('index');
-    Route::get('category/{slug}', 'SiteController@showCategory')->name('project');
 
 });
 
