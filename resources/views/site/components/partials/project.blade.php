@@ -3,14 +3,14 @@
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-lg-12">
-                <div class="text-center">
+                <div class="text-center" data-aos="fade-up">
                     <h2>My <span class="font-weight-bold">Projects</span></h2>
                     <p class="text-muted mx-auto section-subtitle mt-3">It is a long established fact that a reader will be of a page when established fact looking at its layout.</p>
                 </div>
             </div>
         </div>
         <div class="row mt-5 ">
-            <ul class="col list-unstyled list-inline mb-0 text-uppercase work_menu" id="menu-filter">
+            <ul class="col list-unstyled list-inline mb-0 text-uppercase work_menu" id="menu-filter" data-aos="fade-up">
                 <li class="list-inline-item"><a class="active" data-filter="*">All</a></li>
                 @foreach($categories as $category)
                 <li class="list-inline-item">
@@ -25,7 +25,7 @@
         </div>
     </div>
         <div class="container">
-            <div class="row mt-4 work-filter">
+            <div class="row mt-4 work-filter" data-aos="fade-up">
                     @foreach($projects as $project)
                         <div class="col-lg-4 mt-3 work_item {{ $project->category->slug }}">
                             <a href="{{ asset('uploads/images/project/'.$project->image) }}" class="img-zoom">

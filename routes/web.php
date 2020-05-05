@@ -33,7 +33,7 @@ Route::namespace('Site')->name('site.')->group(function () {
  * DEFAULT AUTHENTICATE route define...
  */
 
-//Auth::routes();
+// Auth::routes();
 
 
 /**
