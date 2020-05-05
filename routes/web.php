@@ -18,7 +18,7 @@ use Illuminate\Support\Facades\Route;
 // });
 
 /**
- * <<================================================================================>>
+ * << ================================================================================ >>
  */
 
 /**
@@ -56,7 +56,7 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Auth'], function () {
 /**
  * BACKEND SIDE route define...
  */
-Route::prefix('admin')->namespace('Admin')->name('admin.')->group(function () {
+Route::middleware('auth')->prefix('admin')->namespace('Admin')->name('admin.')->group(function () {
 //    ADMIN DASHBOARD route...
     Route::get('/dashboard', 'AdminController@index')->name('dashboard');
 
@@ -163,7 +163,7 @@ Route::prefix('admin')->namespace('Admin')->name('admin.')->group(function () {
 
     });
 
-    //    BLOG-CATEGORYY SECTION route...
+    //    BLOG-CATEGORY SECTION route...
     Route::prefix('blog-category')->namespace('Blog\Category')->name('blog-category.')->group(function () {
         Route::get('/', 'CategoryController@index')->name('index');
         Route::get('show/{id}', 'CategoryController@show')->name('show');
