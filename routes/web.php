@@ -41,8 +41,8 @@ Route::namespace('Site')->name('site.')->group(function () {
  */
 Route::group(['prefix' => 'admin', 'namespace' => 'Auth'], function () {
 // Authentication Routes...
-    Route::get('/', 'LoginController@showLoginForm')->name('login');
-    Route::post('/', 'LoginController@login')->name('login');
+    Route::get('login', 'LoginController@showLoginForm')->name('login');
+    Route::post('login', 'LoginController@login')->name('login');
     Route::post('logout', 'LoginController@logout')->name('logout');
 
 // Registration Routes...
