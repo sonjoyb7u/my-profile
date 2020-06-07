@@ -27,6 +27,12 @@ use Illuminate\Support\Facades\Route;
 Route::namespace('Site')->name('site.')->group(function () {
     Route::get('/', 'SiteController@index')->name('index');
 
+    // Contact Form Route...
+    Route::group(['prefix'=>'contact', 'as'=>'contact.'], function () {
+        Route::post('/', 'SiteController@store')->name('store');
+    });
+
+
 });
 
 /**
@@ -186,6 +192,19 @@ Route::middleware('auth')->prefix('admin')->namespace('Admin')->name('admin.')->
         Route::put('update/{id}', 'PostController@update')->name('update');
         Route::delete('delete/{id}', 'PostController@destroy')->name('delete');
         Route::get('status/{id}/{status}','PostController@updateStatus')->name('status');
+
+    });
+
+    //    CONTACT FORM SECTION route...
+    Route::prefix('contact')->namespace('contact')->name('contact.')->group(function () {
+        Route::get('/', 'ContactFormController@index')->name('index');
+        Route::get('show/{id}', 'ContactFormController@show')->name('show');
+        Route::post('store', 'ContactFormController@store')->name('store');
+        Route::get('create', 'ContactFormController@create')->name('create');
+        Route::get('edit/{id}', 'ContactFormController@edit')->name('edit');
+        Route::put('update/{id}', 'ContactFormController@update')->name('update');
+        Route::delete('delete/{id}', 'ContactFormController@destroy')->name('delete');
+        Route::get('status/{id}/{status}','ContactFormController@updateStatus')->name('status');
 
     });
 

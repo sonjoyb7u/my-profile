@@ -25,6 +25,7 @@
     <link rel="stylesheet" href="{{ asset('assets/site/vendors/owl-carousel/css/owl.theme.css') }}" />
     <link rel="stylesheet" href="{{ asset('assets/site/vendors/owl-carousel/css/owl.transitions.css') }}" />
     <link rel="stylesheet" href="{{ asset('assets/site/vendors/animated-circle/css/animated-circle.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/site/vendors/toastr/css/toastr.min.css') }}">
     <!-- Custom style Css -->
     <link href="{{ asset('assets/site/css/style.css') }}" rel="stylesheet">
     <link href="{{ asset('assets/site/css/green.css') }}" rel="stylesheet" id="option-color">
@@ -126,7 +127,20 @@
 <script src="{{ asset('assets/site/js/main.js') }}"></script>
 <!--CUSTOM JS-->
 <script src="{{ asset('assets/site/js/custom.js') }}"></script>
-
+<!-- TOASTR JS -->
+<script src="{{ asset('assets/site/vendors/toastr/js/toastr.min.js') }}"></script>
+{!! Toastr::message() !!}
+<script>
+    // Toastr Message generate js...
+    @if ($errors->any())
+    @foreach ($errors->all() as $error)
+    toastr.error('{{ $error }}', 'Error', {
+        closeButton: true,
+        progressBar: true,
+    });
+    @endforeach
+    @endif
+</script>
 <script>
     $(".simple-text-rotate").textrotator({
         animation: "fade",

@@ -104,7 +104,14 @@
                                     <li class="{{ request()->is('admin/blog-post', 'admin/blog-post/edit/*', 'admin/blog-post/show/*') ? 'active-item' : 'close-item' }}"><a href="{{ route('admin.blog-post.index') }}">Manage Blog-Post</a></li>
                                 </ul>
                             </li>
-
+                        </ul>
+                    </li>
+                    <!-- CONTACT FORM SECTION -->
+                    <li class="has-child-item {{ request()->is('admin/contact', 'admin/contact/*') ? 'open-item active-item' : 'close-item' }}">
+                        <a><i class="fa fa-cube" aria-hidden="true"></i><span>CONTACT SECTION</span></a>
+                        <ul class="nav child-nav level-1">
+                            <li class=" {{ request()->is('admin/contact/create') ? 'active-item' : '' }}"><a href="{{ route('admin.contact.create') }}">Add Contact</a></li>
+                            <li  class=" {{ request()->is('admin/contact', 'admin/contact/edit/*', 'admin/contact/show/*') ? 'active-item' : '' }}"><a href="{{ route('admin.contact.index') }}">Manage Contact</a></li>
                         </ul>
                     </li>
                 </ul>

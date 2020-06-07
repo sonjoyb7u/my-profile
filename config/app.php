@@ -13,7 +13,7 @@ return [
     |
     */
 
-    'name' => env('APP_NAME', 'MY PROFILE'),
+    'name' => env('APP_NAME', 'SONJOY PROFILE'),
 
     /*
     |--------------------------------------------------------------------------
