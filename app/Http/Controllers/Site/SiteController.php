@@ -22,6 +22,9 @@ use App\Mail\ContactUsMail;
 
 class SiteController extends Controller
 {
+    public function welcome() {
+        return view('welcome');
+    }
     public function index() {
         $slider = Slider::where('status', Slider::ACTIVE_STATUS)->get();
 //        return $slider;

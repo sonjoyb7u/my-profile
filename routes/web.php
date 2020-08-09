@@ -13,9 +13,15 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
+ Route::get('/welcome', function () {
+     return view('welcome');
+ });
+
+ Route::get('/customer', 'Admin\Customer\CustomerController@index')->name('customer');
+ Route::get('/customer-read', 'Admin\Customer\CustomerController@read')->name('customer-read');
+ Route::post('/customer', 'Admin\Customer\CustomerController@store');
+ Route::get('/customer-edit/{id}', 'Admin\Customer\CustomerController@edit')->name('customer-edit');
+ Route::post('/customer-update/{id}', 'Admin\Customer\CustomerController@update')->name('customer-update');
 
 /**
  * << ================================================================================ >>
